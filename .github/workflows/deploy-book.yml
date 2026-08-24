@@ -32,12 +32,12 @@ jobs:
 
       - name: Build Jupyter Book
         working-directory: book
-        run: jupyter book build
+        run: npx mystmd build --html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: book/_build/site
+          path: book/_build/html
 
   deploy:
     environment:
